@@ -40,6 +40,8 @@ $hotels = [
 
 ];
 
+
+
 ?>
 
 <!doctype html>
@@ -57,7 +59,24 @@ $hotels = [
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <?php foreach ($hotels as $hotel) : ?>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title"><?php echo $hotel['name']; ?></h3>
+                            <p class="card-text"><?php echo $hotel['description']; ?></p>
+                            <div class="parking">Parcheggi disponibili: <?php echo $hotel['parking']; ?></div>
+                            <div class="rating"><?php echo $hotel['vote']; ?> /5</div>
+                            <div class="center_distance">Distanza dal centro: <?php echo $hotel['distance_to_center']; ?> Km</div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
 
+        </div>
+    </div>
 
 
 
