@@ -67,7 +67,14 @@ $hotels = [
                         <div class="card-body">
                             <h3 class="card-title"><?php echo $hotel['name']; ?></h3>
                             <p class="card-text"><?php echo $hotel['description']; ?></p>
-                            <div class="parking">Parcheggi disponibili: <?php echo $hotel['parking']; ?></div>
+                            <div class="parking">Parcheggi disponibili:
+                                <?php
+                                if ($hotel['parking']) {
+                                    echo 'Si';
+                                } else {
+                                    echo 'No';
+                                }; ?>
+                            </div>
                             <div class="rating"><?php echo $hotel['vote']; ?> /5</div>
                             <div class="center_distance">Distanza dal centro: <?php echo $hotel['distance_to_center']; ?> Km</div>
                         </div>
